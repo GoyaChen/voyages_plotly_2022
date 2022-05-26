@@ -15,7 +15,7 @@ if detail == "Invalid token.":
 	time.sleep(15)
 	exit()
 
-bar_layout =  dbc.Container(
+bar_layout = dbc.Container(
 	[
 		dbc.Row([
 			dbc.Col(

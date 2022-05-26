@@ -19,8 +19,12 @@ registered_apps=[
 	["bar_layout","Bar Charts"],
 	["donut_layout","Donut Charts"],
 	["pivot_table_layout","Pivot Table Layout"],
-	["leaflet_map","Leaflet map (experimental)"]
+	["leaflet_map","Leaflet map (experimental)"],
+	["test_graph","test graph"]
 ]
+
+data_canada = px.data.gapminder().query("country == 'Canada'")
+fig = px.bar(data_canada, x='year', y='pop')
 
 app.layout =  dbc.Container(
 	[	
@@ -34,7 +38,6 @@ app.layout =  dbc.Container(
 				
 			),
 			dbc.Col([
-			
 				dbc.Row([
 					search_pane
 				]),
@@ -44,7 +47,7 @@ app.layout =  dbc.Container(
 						html.Div(id='page-content'),
 					)
 				])
-			], width=10,xs=12,sm=12,md=10,lg=10),
+			], width=10,xs=12,sm=12,md=10,lg=10)
 		]),
 			
 	],fluid=True
