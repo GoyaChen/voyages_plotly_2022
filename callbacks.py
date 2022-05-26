@@ -56,12 +56,16 @@ def update_bar_graph(x_var,y_var,agg_mode,search_data):
 		data=data
 	)
 	
+	print(df)
+	
 	if agg_mode=='Averages':
 		df2=df.groupby(x_var)[y_var].mean()
 		df2=df2.reset_index()
 	elif agg_mode=='Totals/Sums':
 		df2=df.groupby(x_var)[y_var].sum()
 		df2=df2.reset_index()
+	
+	print(df2)
 	
 	yvarlabel=md[y_var]['flatlabel']
 	xvarlabel=md[x_var]['flatlabel']
